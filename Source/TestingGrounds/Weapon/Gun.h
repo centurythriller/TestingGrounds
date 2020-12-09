@@ -12,7 +12,7 @@ class TESTINGGROUNDS_API AGun : public AActor
 	GENERATED_BODY()
 	
 		/** Gun mesh: 1st person view (seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly,Category = Mesh,meta=(AllowPrivateAccess="true"))
 	class USkeletalMeshComponent* FP_Gun;
 
 	/** Location on gun mesh where projectiles should spawn. */
@@ -38,6 +38,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	/** Fires a projectile. */
+	UFUNCTION(BlueprintCallable,Category="Fire")
 	void OnFire();
 
 	/** Motion controller (right hand) */

@@ -217,3 +217,9 @@ bool AFirstPersonCharacter::EnableTouchscreenMovement(class UInputComponent* Pla
 	
 	return false;
 }
+
+
+AGun* AFirstPersonCharacter::GetGun() const
+{
+	return Gun;
+}
